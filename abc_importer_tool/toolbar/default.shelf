@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <toolshelf name="shelf_1" label="ABC Tools">
+    <memberTool name="abc_importer"/>
+  </toolshelf>
+  
+  <tool name="abc_importer" label="ABC Importer" icon="PLASMA_App">
+    <helpText><![CDATA[Import Alembic (.abc) files with customizable display options.]]></helpText>
+    <script scriptType="python"><![CDATA[
+import os
+import sys
+
+# Get the python directory path
+python_dir = os.path.join(os.path.dirname(os.path.dirname(hou.shelves.tool("abc_importer").filePath())), "python")
+
+# Add to path if not already there
+if python_dir not in sys.path:
+    sys.path.append(python_dir)
+
+# Import and reload the module
+try:
+    import abc_importer
+    reload(abc_importer)
+except:
+    import abc_importer
+
+# Show the importer window
+abc_importer.show_importer()
+]]></script>
+  </tool>
+</shelfDocument>

@@ -1,0 +1,7 @@
+{
+    "env": [
+        {
+            "PYTHONPATH": "$HOUDINI_PACKAGE_PATH/python"
+        }
+    ]
+}

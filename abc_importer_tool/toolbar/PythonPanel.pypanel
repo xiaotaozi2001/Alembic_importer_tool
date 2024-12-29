@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pythonPanelDocument>
+  <interface name="abc_importer" label="ABC Importer" icon="PLASMA_App" help_url="">
+    <script><![CDATA[
+def createInterface():
+    import abc_importer
+    return abc_importer.AbcImporterUI()
+    ]]></script>
+    <help><![CDATA[]]></help>
+  </interface>
+</pythonPanelDocument>
